@@ -80,7 +80,7 @@ SAMPLE INPUT
 "ES1","S","0.5","USD","07 Jan 2016","08 Jan 2016","10","10"
 "ES2","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
 "ES3","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
-		
+
 "EB1","B","0.5","USD","07 Jan 2016","08 Jan 2016","10","10"
 "EB2","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
 "ES3","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
@@ -88,31 +88,20 @@ SAMPLE INPUT
    
 Application OUTPUT:
 ------------------
-
 Amount in USD settled incoming (SELL) everyday:
-
 Date         :  Total Amount
 2016-01-11   :  200.00
 2016-01-08   :  50.00
-
-
 Amount in USD settled outgoing (BUY) everyday:
-
 Date         :  Total Amount
 2016-01-11   :  200.00
 2016-01-08   :  50.00
-
-
 Ranking of entities based on incoming (SELL) amount:
-
 Rank   :  Enitity   :  Date      
 1   :  ES2   :  2016-01-11
 2   :  ES3   :  2016-01-11
 1   :  ES1   :  2016-01-08
-
-
 Ranking of entities based on outgoing (BUY) amount:
-
 Rank   :  Enitity   :  Date      
 1   :  ES3   :  2016-01-11
 2   :  EB2   :  2016-01-11
