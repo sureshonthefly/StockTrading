@@ -1,10 +1,5 @@
 Stock Trading Report Generator on Daily Basis
 
-Note:
-   Need to update log4j path in APP.Java file.
-   /Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/resource/log4j.properties
-   
-   
  
 MAVEN Command output: mvn install
 ---------------------------------
@@ -17,7 +12,7 @@ MAVEN Command output: mvn install
 [INFO] 
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ dailytrade-report ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/resources
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ dailytrade-report ---
 [INFO] Nothing to compile - all classes are up to date
@@ -35,12 +30,32 @@ MAVEN Command output: mvn install
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
+Running com.jpmorgan.daily.trade.dailytrade_report.GenerateStockReportTest
+Amount in USD settled incoming (SELL) everyday:
+Date         :  Total Amount
+2016-01-11   :  200.00
+2016-01-08   :  50.00
+Ranking of entities based on incoming (SELL) amount:
+Rank   :  Enitity   :  Date      
+1   :  ES3   :  2016-01-11
+2   :  ES2   :  2016-01-11
+1   :  ES1   :  2016-01-08
+Ranking of entities based on outgoing (BUY) amount:
+Rank   :  Enitity   :  Date      
+1   :  ES3   :  2016-01-11
+2   :  ES2   :  2016-01-11
+1   :  ES1   :  2016-01-08
+Amount in USD settled outgoing (BUY) everyday:
+Date         :  Total Amount
+2016-01-11   :  200.00
+2016-01-08   :  50.00
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.349 sec
 Running com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.304 sec
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 
 Results :
 
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
 
 [INFO] 
 [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ dailytrade-report ---
@@ -54,15 +69,25 @@ Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 3.551 s
-[INFO] Finished at: 2017-08-29T07:59:36+01:00
+[INFO] Total time: 3.296 s
+[INFO] Finished at: 2017-08-29T17:37:31+01:00
 [INFO] Final Memory: 11M/225M
 [INFO] ------------------------------------------------------------------------
 
 
+SAMPLE INPUT
+------------
+Stock es1 = new Stock("ES1","S","0.5","USD","07 Jan 2016","08 Jan 2016","10","10");
+Stock es2 = new Stock("ES2","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10");
+Stock es3 = new Stock("ES3","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10");
+		
+Stock eb1 = new Stock("EB1","B","0.5","USD","07 Jan 2016","08 Jan 2016","10","10");
+Stock eb2 = new Stock("EB2","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10");
+Stock eb3 = new Stock("ES3","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10");
+      
    
 Application OUTPUT:
-~~~~~~~~~~~~~~~~~~~
+------------------
 
 Amount in USD settled incoming (SELL) everyday:
 Date         :  Total Amount
