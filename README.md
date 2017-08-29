@@ -83,7 +83,7 @@ SAMPLE INPUT:
 "ES3","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
 
 Application OUTPUT:
--------------------
+````````````````````
 Amount in USD settled incoming (SELL) everyday:
 Date : Total Amount 
 2016-01-11 : 200.00 
@@ -105,4 +105,4 @@ Rank : Enitity : Date
 1 : ES3 : 2016-01-11 
 2 : EB2 : 2016-01-11 
 1 : EB1 : 2016-01-08
-
+```````````````````````````````````````
