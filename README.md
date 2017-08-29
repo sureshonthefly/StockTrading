@@ -2,7 +2,8 @@
 Stock Trading Report Generator on Daily Basis
 
 MAVEN Command output: mvn install
-
+---------------------------
+```````````````````````````````````
 [INFO] Scanning for projects...
 [INFO]                                                                         
 [INFO] ------------------------------------------------------------------------
@@ -70,10 +71,11 @@ Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Final Memory: 11M/225M
 [INFO] ------------------------------------------------------------------------
 
-
+`````````````````````````````
 
 SAMPLE INPUT:
 ------------
+````````````````````
 "ES1","S","0.5","USD","07 Jan 2016","08 Jan 2016","10","10" 
 "ES2","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10" 
 "ES3","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
@@ -81,8 +83,11 @@ SAMPLE INPUT:
 "EB1","B","0.5","USD","07 Jan 2016","08 Jan 2016","10","10" 
 "EB2","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10" 
 "ES3","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
+````````````````````````
 
 Application OUTPUT:
+------------------
+
 ````````````````````
 Amount in USD settled incoming (SELL) everyday:
 Date : Total Amount 
