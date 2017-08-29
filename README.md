@@ -90,18 +90,21 @@ Application OUTPUT:
 ------------------
 
 Amount in USD settled incoming (SELL) everyday:
+
 Date         :  Total Amount
 2016-01-11   :  200.00
 2016-01-08   :  50.00
 
 
 Amount in USD settled outgoing (BUY) everyday:
+
 Date         :  Total Amount
 2016-01-11   :  200.00
 2016-01-08   :  50.00
 
 
 Ranking of entities based on incoming (SELL) amount:
+
 Rank   :  Enitity   :  Date      
 1   :  ES2   :  2016-01-11
 2   :  ES3   :  2016-01-11
@@ -109,6 +112,7 @@ Rank   :  Enitity   :  Date
 
 
 Ranking of entities based on outgoing (BUY) amount:
+
 Rank   :  Enitity   :  Date      
 1   :  ES3   :  2016-01-11
 2   :  EB2   :  2016-01-11
