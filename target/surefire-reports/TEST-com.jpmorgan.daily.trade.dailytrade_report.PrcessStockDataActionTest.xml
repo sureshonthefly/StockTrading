@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" time="0.007" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib"/>
@@ -27,7 +27,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/suresh/eclipse/workspace/jpmorgan/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf8104239606083500304.tmp"/>
+    <property name="classworlds.conf" value="/Users/suresh/eclipse/workspace/jpmorgan/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4970492575796250289.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/suresh/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -67,8 +67,8 @@
   <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeOutgoingDayNegativeRankingTest" time="0"/>
   <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeIncomingDayAmoutNegativeTest" time="0"/>
   <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeIncomingDayRankingSuccessTest" time="0"/>
-  <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeOutgoingDayAmoutFailureTest" time="0.002"/>
-  <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeOutgoingDaySuccessRankingTest" time="0.002"/>
-  <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeIncomingDayRankingNegativeTest" time="0.001"/>
-  <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeOutgoingDayAmoutSuccessTest" time="0.002"/>
+  <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeOutgoingDayAmoutFailureTest" time="0"/>
+  <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeOutgoingDaySuccessRankingTest" time="0"/>
+  <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeIncomingDayRankingNegativeTest" time="0"/>
+  <testcase classname="com.jpmorgan.daily.trade.dailytrade_report.PrcessStockDataActionTest" name="computeOutgoingDayAmoutSuccessTest" time="0"/>
 </testsuite>

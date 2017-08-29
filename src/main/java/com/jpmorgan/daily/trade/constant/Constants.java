@@ -15,6 +15,9 @@ public abstract class Constants {
 	public static final String PROCESS ="PROCESS";
 	public static final String REPORT ="REPORT";
 	
+	/**
+	 * Below are Application specific strings
+	 */
 	public static final String NEWLINE="\n";
 	public static final String DATE="Date      ";
 	public static final String COLON="   :  ";

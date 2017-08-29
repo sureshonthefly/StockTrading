@@ -11,7 +11,6 @@ import static java.util.stream.Collectors.toSet;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -112,10 +111,10 @@ public class ProcessStockDataAction implements IProcessStockData {
 		return (date, stocks2) -> {
 			final AtomicInteger couter = new AtomicInteger(1);
 			try{
-				LinkedList<StockRanking> ranking = stocks2.stream()
+				List<StockRanking> ranking = stocks2.stream()
 						.sorted((obj1, obj2) -> obj2.getTotalTradeAmt().compareTo(obj1.getTotalTradeAmt()))
 						.map(instruction -> new StockRanking(couter.getAndIncrement(), instruction.getEntity(), date))
-						.collect(Collectors.toCollection(LinkedList::new));
+						.collect(Collectors.toCollection(ArrayList::new));
 				rankingObj.addAll(ranking);
 			}catch(StockTradingException e){
 				throw e;
