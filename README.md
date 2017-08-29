@@ -77,13 +77,13 @@ Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
 
 SAMPLE INPUT
 ------------
-Stock es1 = new Stock("ES1","S","0.5","USD","07 Jan 2016","08 Jan 2016","10","10");
-Stock es2 = new Stock("ES2","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10");
-Stock es3 = new Stock("ES3","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10");
+"ES1","S","0.5","USD","07 Jan 2016","08 Jan 2016","10","10"
+"ES2","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
+"ES3","S","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
 		
-Stock eb1 = new Stock("EB1","B","0.5","USD","07 Jan 2016","08 Jan 2016","10","10");
-Stock eb2 = new Stock("EB2","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10");
-Stock eb3 = new Stock("ES3","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10");
+"EB1","B","0.5","USD","07 Jan 2016","08 Jan 2016","10","10"
+"EB2","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
+"ES3","B","0.5","USD","08 Jan 2016","09 Jan 2016","20","10"
       
    
 Application OUTPUT:
