@@ -3,14 +3,14 @@
  * Copyright (c) 2016-2017
  * All rights reserved.
  *******************************************************************************/
-package com.jpmorgan.daily.trade.model;
+package com.jpmorgan.daily.trade.action;
 
-public enum OrderType {
-	B("BUY"),S("SELL");
-	
-	private String oderTypeCode;
-	
-	private OrderType(String value){
-		this.oderTypeCode = value;
-	}
+import java.util.List;
+
+import com.jpmorgan.daily.trade.model.Stock;
+
+public interface IPreprocessStockData {
+
+	void prePopulatedRequiredData(List<Stock> stocks);
+
 }

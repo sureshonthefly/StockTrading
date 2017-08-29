@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Project Stock Trading
+ * Copyright (c) 2016-2017
+ * All rights reserved.
+ *******************************************************************************/
 package com.jpmorgan.daily.trade.action;
 
 import java.util.ArrayList;
@@ -10,8 +15,12 @@ import com.jpmorgan.daily.trade.model.Stock;
  * @author suresh
  *
  */
-public class InitializeStockDataAction {
+public class InitializeStockDataAction implements IInitializeStockData {
 
+	/* (non-Javadoc)
+	 * @see com.jpmorgan.daily.trade.action.InitializeStockData#loadStockData()
+	 */
+	@Override
 	public List<Stock> loadStockData() {
 		
 		List<Stock> stocks = new ArrayList<Stock>();

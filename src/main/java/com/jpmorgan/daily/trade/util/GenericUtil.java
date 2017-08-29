@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Project Stock Trading
+ * Copyright (c) 2016-2017
+ * All rights reserved.
+ *******************************************************************************/
 package com.jpmorgan.daily.trade.util;
 
 import java.time.DayOfWeek;

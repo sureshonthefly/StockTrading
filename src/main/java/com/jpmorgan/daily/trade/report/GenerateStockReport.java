@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Project Stock Trading
+ * Copyright (c) 2016-2017
+ * All rights reserved.
+ *******************************************************************************/
 package com.jpmorgan.daily.trade.report;
 
 import java.math.BigDecimal;
@@ -9,7 +14,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import com.jpmorgan.daily.trade.action.ProcessStockDataAction;
-import com.jpmorgan.daily.trade.constant.Contants;
+import com.jpmorgan.daily.trade.constant.Constants;
 import com.jpmorgan.daily.trade.model.StockRanking;
 
 /**
@@ -17,43 +22,43 @@ import com.jpmorgan.daily.trade.model.StockRanking;
  * @author suresh
  *
  */
-public class GenerateStockReport {
+public class GenerateStockReport implements IGenerateStockReport {
 
 	static final Logger logger = Logger.getLogger(ProcessStockDataAction.class);
 
-	/**
-	 * Generate Report for Outgoing (BUY) day amount
-	 * @param stockObjMap contains date with tatal amount
+	/* (non-Javadoc)
+	 * @see com.jpmorgan.daily.trade.report.IGenerateStockReport#generateOutgoingDayAmoutReport(java.util.Map)
 	 */
-	public static void generateOutgoingDayAmoutReport(Map<LocalDate, BigDecimal> stockObjMap) {
-		logger.debug(Contants.AMT_OUTGOING_DAY);
+	@Override
+	public void generateOutgoingDayAmoutReport(Map<LocalDate, BigDecimal> stockObjMap) {
+		logger.debug(Constants.AMT_OUTGOING_DAY);
 		generateDayAmoutReport(stockObjMap);
 	}
 
-	/**
-	 * Generate Report for Incoming (SELL) day amount
-	 * @param stockObjMap contains date with total amount
+	/* (non-Javadoc)
+	 * @see com.jpmorgan.daily.trade.report.IGenerateStockReport#generateInComingDayAmoutReport(java.util.Map)
 	 */
-	public static void generateInComingDayAmoutReport(Map<LocalDate, BigDecimal> stockObjMap) {
-		logger.debug(Contants.AMT_INCOMING_DAY);
+	@Override
+	public void generateInComingDayAmoutReport(Map<LocalDate, BigDecimal> stockObjMap) {
+		logger.debug(Constants.AMT_INCOMING_DAY);
 		generateDayAmoutReport(stockObjMap);
 	}
 
-	/**
-	 * Generate Report for Outgoing (BUY) day ranking
-	 * @param stockRankObj objects to display stock ranks based on entity
+	/* (non-Javadoc)
+	 * @see com.jpmorgan.daily.trade.report.IGenerateStockReport#generateOutgoingRankingReport(java.util.List)
 	 */
-	public static void generateOutgoingRankingReport(List<StockRanking> stockRankObj) {
-		logger.debug(Contants.RANKING_ENTITY_OUTGOING_DAY);
+	@Override
+	public void generateOutgoingRankingReport(List<StockRanking> stockRankObj) {
+		logger.debug(Constants.RANKING_ENTITY_OUTGOING_DAY);
 		generateDayRankingReport(stockRankObj);
 	}
 
-	/**
-	 * Generate Report for Outgoing (BUY) day ranking
-	 * @param stockRankObj objects to display stock ranks based on entity
+	/* (non-Javadoc)
+	 * @see com.jpmorgan.daily.trade.report.IGenerateStockReport#generateIncomingRankingReport(java.util.List)
 	 */
-	public static void generateIncomingRankingReport(List<StockRanking> stockRankObj) {
-		logger.debug(Contants.RANKING_ENTITY_INCOMING_DAY);
+	@Override
+	public void generateIncomingRankingReport(List<StockRanking> stockRankObj) {
+		logger.debug(Constants.RANKING_ENTITY_INCOMING_DAY);
 		generateDayRankingReport(stockRankObj);
 	}
 
@@ -63,10 +68,10 @@ public class GenerateStockReport {
 	 */
 	private static void generateDayAmoutReport(Map<LocalDate, BigDecimal> stockObjMap) {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append(Contants.DATE).append(Contants.COLON).append(Contants.TOTAL_AMOUNT);
+		stringBuilder.append(Constants.DATE).append(Constants.COLON).append(Constants.TOTAL_AMOUNT);
 
 		for (Map.Entry<LocalDate, BigDecimal> obj : stockObjMap.entrySet()) {
-			stringBuilder.append(Contants.NEWLINE).append(obj.getKey()).append(Contants.COLON)
+			stringBuilder.append(Constants.NEWLINE).append(obj.getKey()).append(Constants.COLON)
 					.append(obj.getValue().setScale(2, RoundingMode.CEILING));
 		}
 
@@ -79,11 +84,11 @@ public class GenerateStockReport {
 	 */
 	private static void generateDayRankingReport(List<StockRanking> stockRankObj) {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append(Contants.RANK).append(Contants.COLON).append(Contants.ENTITY).append(Contants.COLON)
-				.append(Contants.DATE);
+		stringBuilder.append(Constants.RANK).append(Constants.COLON).append(Constants.ENTITY).append(Constants.COLON)
+				.append(Constants.DATE);
 		for (StockRanking obj : stockRankObj) {
-			stringBuilder.append(Contants.NEWLINE).append(obj.getCounter()).append(Contants.COLON)
-					.append(obj.getEntity()).append(Contants.COLON).append(obj.getDate());
+			stringBuilder.append(Constants.NEWLINE).append(obj.getCounter()).append(Constants.COLON)
+					.append(obj.getEntity()).append(Constants.COLON).append(obj.getDate());
 		}
 		logger.debug(stringBuilder);
 	}
