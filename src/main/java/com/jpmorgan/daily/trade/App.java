@@ -52,11 +52,19 @@ public class App {
 			return;
 		}
 		
+		//Craete required stock trading objects	
+		IProcessStockData iProcessStockData = null;
+		IGenerateStockReport generateReport = null;
+		try {
+			
+			iProcessStockData = (IProcessStockData) Factory.newInstance(Constants.PROCESS);
+			generateReport = (IGenerateStockReport) Factory.newInstance(Constants.REPORT);
 		
-		//Process the stock data and Generate the report		
-		IProcessStockData iProcessStockData = (IProcessStockData) Factory.newInstance(Constants.PROCESS);
-		IGenerateStockReport generateReport = (IGenerateStockReport) Factory.newInstance(Constants.REPORT);
+		}catch(Exception e) {
+			logger.error(Constants.ERROR_PRE_PROCESS_SAMPLE_DATA + e.getMessage());
+		}
 		
+		//Process the stock data and Generate the report
 		computeStockTradeDayAmountIncoming(iProcessStockData,generateReport,stocks);
 		computeStockTradeDayAmountOutgoing(iProcessStockData,generateReport,stocks);
 		computeStockTradeDayRankingIncoming(iProcessStockData,generateReport,stocks);

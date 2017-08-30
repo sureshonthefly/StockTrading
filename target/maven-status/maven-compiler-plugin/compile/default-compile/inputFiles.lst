@@ -5,6 +5,8 @@
 /Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/java/com/jpmorgan/daily/trade/action/ProcessStockDataAction.java
 /Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/java/com/jpmorgan/daily/trade/constant/Constants.java
 /Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/java/com/jpmorgan/daily/trade/action/InitializeStockDataAction.java
+/Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/java/com/jpmorgan/daily/trade/service/IProcessStockDataService.java
+/Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/java/com/jpmorgan/daily/trade/service/ProcessStockDataService.java
 /Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/java/com/jpmorgan/daily/trade/util/GenericUtil.java
 /Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/java/com/jpmorgan/daily/trade/action/IProcessStockData.java
 /Users/suresh/eclipse/workspace/boot/Demo/dailytrade-report/src/main/java/com/jpmorgan/daily/trade/model/Stock.java

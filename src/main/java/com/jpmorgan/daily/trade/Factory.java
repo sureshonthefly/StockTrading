@@ -18,9 +18,6 @@ public class Factory {
 
 	public static Object newInstance(String classType) {
 		Object obj = null;
-
-		try {
-
 			if(classType == null){
 				return null;
 			}else if(classType.equalsIgnoreCase("INIT")){
@@ -32,11 +29,6 @@ public class Factory {
 			}else if(classType.equalsIgnoreCase("REPORT")){
 				return new GenerateStockReport();
 			}
-						
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-
 		return obj;
 	}
 

@@ -11,6 +11,10 @@ import com.jpmorgan.daily.trade.model.Stock;
 
 public interface IInitializeStockData {
 
-	List<Stock> loadStockData();
+	/**
+	 * Load the stock data
+	 * @return the list of stock object
+	 */
+	public List<Stock> loadStockData();
 
 }

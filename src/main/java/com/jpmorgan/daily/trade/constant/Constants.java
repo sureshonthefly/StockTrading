@@ -39,5 +39,6 @@ public abstract class Constants {
 	public static final String ERROR_INCOMING_STOCK_TRADING_AMOUNT = "Unexpected error while computing Incoming Stock Trading on Amount  {} ";
 	public static final String ERROR_GENERATING_SAMPLE_DATA = "Unexpected error while generating sample data : ";
 	public static final String ERROR_PRE_PROCESS_SAMPLE_DATA = "Unexpected error while pre process sample data : ";
+	public static final String ERROR_IN_CREATING_OBJECTS = "Unexpected error while creating objects : ";
 
 }

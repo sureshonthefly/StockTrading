@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 import org.junit.After;
 import org.junit.Before;
@@ -20,14 +21,25 @@ import org.junit.Test;
 import com.jpmorgan.daily.trade.action.IPreprocessStockData;
 import com.jpmorgan.daily.trade.action.PreprocessStockDataAction;
 import com.jpmorgan.daily.trade.action.ProcessStockDataAction;
+import com.jpmorgan.daily.trade.model.OrderType;
 import com.jpmorgan.daily.trade.model.Stock;
 import com.jpmorgan.daily.trade.model.StockRanking;
+import com.jpmorgan.daily.trade.service.IProcessStockDataService;
+import com.jpmorgan.daily.trade.service.ProcessStockDataService;
 
-public class PrcessStockDataActionTest {
+public class ProcessStockDataServiceTest {
 
 	private final List<Stock> stocks = new ArrayList<Stock>();
-	private final List<Stock> stocksDummy = new ArrayList<Stock>();
-	private ProcessStockDataAction stockDataAction;
+	private IProcessStockDataService processStockDataService;
+	/**
+	 * Condition to filter the Outgoing (BUT)
+	 */
+	private static Predicate<Stock> predicateOutgoing = data -> data.getOrderType().equals(OrderType.B);
+
+	/**
+	 * Condition to filter the Incoming (SELL)
+	 */
+	private static Predicate<Stock> predicateIncoming = data -> data.getOrderType().equals(OrderType.S);
 	
 	@Before
 	public void setUp() throws Exception {
@@ -45,7 +57,7 @@ public class PrcessStockDataActionTest {
 		stocks.add(eb1);
 		stocks.add(eb2);
 		stocks.add(eb3);
-		stockDataAction = new ProcessStockDataAction();
+		processStockDataService = new ProcessStockDataService();
 		IPreprocessStockData prePrcessRequiredData = new PreprocessStockDataAction();
 		prePrcessRequiredData.prePopulatedRequiredData(stocks);
 	}
@@ -53,59 +65,34 @@ public class PrcessStockDataActionTest {
 	@After
 	public void tearDown() throws Exception {
 		stocks.clear();
-		stockDataAction= null;
 	}
 
 	@Test
-	public void computeIncomingDayAmoutSuccessTest() {
-		Map<LocalDate, BigDecimal> result=  stockDataAction.computeIncomingDayAmout(stocks);
+	public void computeDayAmoutTransactionIncomingTest() {
+		Map<LocalDate, BigDecimal> result=  processStockDataService.computeDayAmoutTransaction(stocks, predicateIncoming);
 		BigDecimal expected = new BigDecimal("200.0");
 		assertEquals(expected, result.get(LocalDate.of(2016, 01, 11)));
 	}
 	
 	@Test
-	public void computeIncomingDayAmoutNegativeTest() {
-		Map<LocalDate, BigDecimal> result=  stockDataAction.computeIncomingDayAmout(stocksDummy);
-		assertEquals(0, result.size());
-	}
-
-	@Test
-	public void computeOutgoingDayAmoutSuccessTest() {
-		Map<LocalDate, BigDecimal> result =  stockDataAction.computeOutgoingDayAmout(stocks);
+	public void computeDayAmoutTransactionOutgoingTest() {
+		Map<LocalDate, BigDecimal> result=  processStockDataService.computeDayAmoutTransaction(stocks, predicateOutgoing);
 		BigDecimal expected = new BigDecimal("200.0");
 		assertEquals(expected, result.get(LocalDate.of(2016, 01, 11)));
 	}
 	
+
 	@Test
-	public void computeOutgoingDayAmoutFailureTest() {
-		Map<LocalDate, BigDecimal> result =  stockDataAction.computeOutgoingDayAmout(stocksDummy);
-		assertEquals(0, result.size());
-	}
-	
-	@Test
-	public void computeIncomingDayRankingSuccessTest() {
-		List<StockRanking> ranking  = stockDataAction.computeIncomingDayRanking(stocks);
+	public void computeDayRankingIncomingTest() {
+		List<StockRanking> ranking  =   processStockDataService.computeDayRanking(stocks, predicateIncoming);
 		int expected =1;
 		assertEquals(expected, ranking.get(0).getCounter());
 	}
 	
 	@Test
-	public void computeIncomingDayRankingNegativeTest() {
-		List<StockRanking> ranking  = stockDataAction.computeIncomingDayRanking(stocksDummy);
-		assertEquals(0, ranking.size());
-	}
-
-	@Test
-	public void computeOutgoingDaySuccessRankingTest() {
-		List<StockRanking> ranking  = stockDataAction.computeIncomingDayRanking(stocks);
+	public void computeDayRankingOutgoingTest() {
+		List<StockRanking> ranking  =   processStockDataService.computeDayRanking(stocks, predicateOutgoing);
 		int expected =1;
 		assertEquals(expected, ranking.get(0).getCounter());
 	}
-	
-	@Test
-	public void computeOutgoingDayNegativeRankingTest() {
-		List<StockRanking> ranking  = stockDataAction.computeIncomingDayRanking(stocksDummy);
-		assertEquals(0, ranking.size());
-	}
-
 }
